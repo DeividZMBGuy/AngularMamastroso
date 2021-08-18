@@ -1,0 +1,53 @@
+<app-navbarcompo></app-navbarcompo>
+
+<h1>See added departments</h1>
+<table border=1>
+    <thead>
+        <tr>
+            <th style="border: 1px solid black;">ID</th>
+            <th style="border: 1px solid black;">Name</th>
+            <th style="border: 1px solid black;">Specialty</th>
+            <th style="border: 1px solid black;">Area Phone</th>
+            <th style="border: 1px solid black;">Responsible</th>
+            <th style="border: 1px solid black;">Responsible ID</th>
+            <th style="border: 1px solid black;">Date of creation</th>
+            <th style="border: 1px solid black;">UPDATE</th>
+            <th style="border: 1px solid black;">DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of departments">
+            <td style="border: 1px solid black;">{{d.IDDepartment}}</td>
+            <td style="border: 1px solid black;">{{d.Name}}</td>
+            <td style="border: 1px solid black;">{{d.Specialty}}</td>
+            <td style="border: 1px solid black;">{{d.AreaPhone}}</td>
+            <td style="border: 1px solid black;">{{d.ResponsibleName}}</td>
+            <td style="border: 1px solid black;">{{d.ResponsibleUserID}}</td>
+            <td style="border: 1px solid black;">{{d.DateOfCreation}}</td>
+            <td style="border: 1px solid black;"><button>UPDATE</button></td>
+            <td style="border: 1px solid black;"><button (click)="deleteDepartment(d.IDDepartment)">DELETE</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>Add new departments</h1>
+<input [(ngModel)]="Name" type="text" placeholder="Name">
+<input [(ngModel)]="Specialty" type="text" placeholder="Specialty">
+<input [(ngModel)]="AreaPhone" type="text" placeholder="Area Phone">
+<input [(ngModel)]="ResponsibleName" type="text" placeholder="Responsible Name">
+<input [(ngModel)]="ResponsibleUserID" type="text" placeholder="Responsible in number">
+<input [(ngModel)]="DateOfCreation" type="text" placeholder="Date of creation">
+<button (click)="addDepartment(Name, Specialty, AreaPhone, ResponsibleName, ResponsibleUserID, DateOfCreation)">ADD DEPARTMENT</button>
+
+<h1>Update existing department</h1>
+<input [(ngModel)]="IDDepartment" type="text" placeholder="ID of the department">
+<input [(ngModel)]="Name" type="text" placeholder="Name">
+<input [(ngModel)]="Specialty" type="text" placeholder="Specialty">
+<input [(ngModel)]="AreaPhone" type="text" placeholder="Area Phone">
+<input [(ngModel)]="ResponsibleName" type="text" placeholder="Responsible Name">
+<input [(ngModel)]="ResponsibleUserID" type="text" placeholder="Responsible in number">
+<input [(ngModel)]="DateOfCreation" type="text" placeholder="Date of creation">
+<button (click)="updateDepartment(IDDepartment, Name, Specialty, AreaPhone, ResponsibleName, ResponsibleUserID, DateOfCreation)">UPDATE DEPARTMENT</button>
+
+
+<button routerLink = "/adminhome">Back</button>

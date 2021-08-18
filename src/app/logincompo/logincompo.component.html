@@ -1,0 +1,14 @@
+<h1 style="font-family: fantasy;">Hi welcome to Chilli's</h1>
+
+<div>
+    <label style="font-family: fantasy;">Your username </label>
+    <input type="text" [(ngModel)] = "username">
+</div>
+
+<div>
+    <label style="font-family: fantasy;">Your password </label>
+    <input type="password" [(ngModel)] = "password">
+</div>
+
+<button (click) = 'loginMethod(username, password)'>Login</button>
+

@@ -1,0 +1,44 @@
+<app-navbarcompo></app-navbarcompo>
+
+<h1>See added employees</h1>
+<table border=1>
+    <thead>
+        <tr>
+            <th style="border: 1px solid black;">ID</th>
+            <th style="border: 1px solid black;">Name</th>
+            <th style="border: 1px solid black;">Address</th>
+            <th style="border: 1px solid black;">Date of hiring</th>
+            <th style="border: 1px solid black;">Department</th>
+            <th style="border: 1px solid black;">UPDATE</th>
+            <th style="border: 1px solid black;">DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees">
+            <td style="border: 1px solid black;">{{e.IDEmployee}}</td>
+            <td style="border: 1px solid black;">{{e.Name}}</td>
+            <td style="border: 1px solid black;">{{e.Address}}</td>
+            <td style="border: 1px solid black;">{{e.DateOfHiring}}</td>
+            <td style="border: 1px solid black;">{{e.IDDepartment}}</td>
+            <td style="border: 1px solid black;"><button>UPDATE</button></td>
+            <td style="border: 1px solid black;"><button (click)="deleteEmployee(e.IDEmployee)">DELETE</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>Add new employees</h1>
+<input [(ngModel)]="Name" type="text" placeholder="Name">
+<input [(ngModel)]="Address" type="text" placeholder="Address">
+<input [(ngModel)]="DateOfHiring" type="text" placeholder="Date of hiring">
+<input [(ngModel)]="IDDepartment" type="text" placeholder="Department in number">
+<button (click)="addEmployee(Name, Address, DateOfHiring, IDDepartment)">ADD EMPLOYEE</button>
+
+<h1>Update existing employee</h1>
+<input [(ngModel)]="IDEmployee" type="text" placeholder="ID of the empoyee">
+<input [(ngModel)]="Name" type="text" placeholder="Name">
+<input [(ngModel)]="Address" type="text" placeholder="Address">
+<input [(ngModel)]="DateOfHiring" type="text" placeholder="Date of hiring">
+<input [(ngModel)]="IDDepartment" type="text" placeholder="Department in number">
+<button (click)="updateEmployee(IDEmployee, Name, Address, DateOfHiring, IDDepartment)">UPDATE EMPLOYEE</button>
+
+<button routerLink = "/adminhome">Back</button>

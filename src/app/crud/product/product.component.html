@@ -1,0 +1,34 @@
+<app-navbarcompo></app-navbarcompo>
+
+<h1>See added products</h1>
+<table border=1>
+    <thead>
+        <tr>
+            <th style="border: 1px solid black;">ID</th>
+            <th style="border: 1px solid black;">Name</th>
+            <th style="border: 1px solid black;">IDDepartment</th>
+            <th style="border: 1px solid black;">DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td style="border: 1px solid black;">{{p.IDProduct}}</td>
+            <td style="border: 1px solid black;">{{p.Name}}</td>
+            <td style="border: 1px solid black;">{{p.IDDepartment}}</td>
+            <td style="border: 1px solid black;"><button (click)="deleteProduct(p.IDProduct)">DELETE</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>Add new product</h1>
+<input [(ngModel)]="Name" type="text" placeholder="Name">
+<input [(ngModel)]="IDDepartment" type="text" placeholder="Department in number">
+<button (click)="addProduct(Name, IDDepartment)">ADD PRODUCT</button>
+
+<h1>Update existing product</h1>
+<input [(ngModel)]="IDProduct" type="text" placeholder="ID of the product">
+<input [(ngModel)]="Name" type="text" placeholder="Name">
+<input [(ngModel)]="IDDepartment" type="text" placeholder="Department in number">
+<button (click)="updateProduct(IDProduct, Name, IDDepartment)">UPDATE PRODUCT</button>
+
+<button routerLink = "/adminhome">Back</button>

@@ -1,0 +1,94 @@
+<app-navbarcompo></app-navbarcompo>
+<h1>Welcome, mortal</h1>
+
+<div>
+    <h1>See added factories</h1>
+        <table border=1>
+        <thead>
+            <tr>
+                <th>Official Name</th>
+                <th>Comercial Name</th>
+                <th>RFC</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>Date of DateOfCreation</th>
+                <th>Director</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of factories">
+                <td>{{f.OfficialName}}</td>
+                <td>{{f.ComercialName}}</td>
+                <td>{{f.RFC}}</td>
+                <td>{{f.Address}}</td>
+                <td>{{f.Telephone}}</td>
+                <td>{{f.DateOfCreation}}</td>
+                <td>{{f.Director}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>See added departments</h1>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Specialty</th>
+                <th>Area Phone</th>
+                <th>Responsible</th>
+                <th>Responsible ID</th>
+                <th>Date of creation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of departments">
+                <td>{{d.Name}}</td>
+                <td>{{d.Specialty}}</td>
+                <td>{{d.AreaPhone}}</td>
+                <td>{{d.ResponsibleName}}</td>
+                <td>{{d.ResponsibleUserID}}</td>
+                <td>{{d.DateOfCreation}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>See added employees</h1>
+        <table border=1>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date of hiring</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of employees">
+                <td>{{e.Name}}</td>
+                <td>{{e.Address}}</td>
+                <td>{{e.DateOfHiring}}</td>
+                <td>{{e.IDDepartment}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>See added products</h1>
+        <table border=1>
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>IDDepartment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.Name}}</td>
+                <td>{{p.IDDepartment}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button routerLink = "/">Logout</button>
+</div>
+
+<app-footercompo></app-footercompo>

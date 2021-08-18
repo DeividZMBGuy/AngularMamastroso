@@ -1,0 +1,56 @@
+<app-navbarcompo></app-navbarcompo>
+
+<h1>See added factories</h1>
+<table border=1>
+    <thead>
+        <tr>
+            <th style="border: 1px solid black;">ID</th>
+            <th style="border: 1px solid black;">Official Name</th>
+            <th style="border: 1px solid black;">Comercial Name</th>
+            <th style="border: 1px solid black;">RFC</th>
+            <th style="border: 1px solid black;">Address</th>
+            <th style="border: 1px solid black;">Telephone</th>
+            <th style="border: 1px solid black;">Date of DateOfCreation</th>
+            <th style="border: 1px solid black;">Director</th>
+            <th style="border: 1px solid black;">UPDATE</th>
+            <th style="border: 1px solid black;">DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of factories">
+            <td style="border: 1px solid black;">{{f.IDFactory}}</td>
+            <td style="border: 1px solid black;">{{f.OfficialName}}</td>
+            <td style="border: 1px solid black;">{{f.ComercialName}}</td>
+            <td style="border: 1px solid black;">{{f.RFC}}</td>
+            <td style="border: 1px solid black;">{{f.Address}}</td>
+            <td style="border: 1px solid black;">{{f.Telephone}}</td>
+            <td style="border: 1px solid black;">{{f.DateOfCreation}}</td>
+            <td style="border: 1px solid black;">{{f.Director}}</td>
+            <td style="border: 1px solid black;"><button>UPDATE</button></td>
+            <td style="border: 1px solid black;"><button (click)="deleteFactory(f.IDFactory)">DELETE</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>Add new factories</h1>
+<input [(ngModel)]="OfficialName" type="text" placeholder="Official Name">
+<input [(ngModel)]="ComercialName" type="text" placeholder="Comercial Name">
+<input [(ngModel)]="RFC" type="text" placeholder="RFC">
+<input [(ngModel)]="Address" type="text" placeholder="Address">
+<input [(ngModel)]="Telephone" type="text" placeholder="Telephone">
+<input [(ngModel)]="DateOfCreation" type="text" placeholder="Date of Creation">
+<input [(ngModel)]="Director" type="text" placeholder="Director">
+<button (click)="addFactory(OfficialName, ComercialName, RFC, Address, Telephone, DateOfCreation, Director)">ADD FACTORY</button>
+
+<h1>Update existing factory</h1>
+<input [(ngModel)]="IDFactory" type="text" placeholder="ID of the factory">
+<input [(ngModel)]="OfficialName" type="text" placeholder="Official Name">
+<input [(ngModel)]="ComercialName" type="text" placeholder="Comercial Name">
+<input [(ngModel)]="RFC" type="text" placeholder="RFC">
+<input [(ngModel)]="Address" type="text" placeholder="Address">
+<input [(ngModel)]="Telephone" type="text" placeholder="Telephone">
+<input [(ngModel)]="DateOfCreation" type="text" placeholder="Date of Creation">
+<input [(ngModel)]="Director" type="text" placeholder="Director">
+<button (click)="updateFactory(IDFactory, OfficialName, ComercialName, RFC, Address, Telephone, DateOfCreation, Director)">UPDATE FACTORY</button>
+
+<button routerLink = "/adminhome">Back</button>
